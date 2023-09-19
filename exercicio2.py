@@ -1,19 +1,20 @@
 '''Preencha uma matriz 6x6 com o elemento 1 em todas as posições em que o índice de linha tem valor 
 igual ao índice da coluna. Preencha os demais elementos com zero e exiba a matriz.'''
 
-linha = 6
-coluna = 6
+
 
 matriz = []
-for linhas in range(linha):
+for i in range(6):
     lista = []
-    for colunas in range(coluna):
-        n = int(input("Insira o número: "))
-        lista.append(n)
+    for j in range(6):
+        if i == j:
+            lista.append(1)
+        else: 
+            lista.append(0)
     matriz.append(lista)
 print(matriz)
 
-for linha in range(len(matriz)):
-    for coluna in range(len(matriz)):
-        if matriz[linha] == matriz[coluna]:
-            matriz[linha][coluna] = 1
+for i in range(len(matriz)):
+    for j in range(len(matriz[0])):
+        print(matriz[i][j], end='\t')
+    print()
