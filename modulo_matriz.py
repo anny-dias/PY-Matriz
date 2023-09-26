@@ -19,12 +19,28 @@ def exibe_matriz(matriz: list) -> None:
         print()
 
 def preencher_matriz_aleatoria(lin: int, col: int) -> list:
+    '''Preenche a matriz com números aleatorios'''
     matriz = []
     for i in range(lin):
         linha = []
         for j in range(col):
             n = randint(1, 50)
             linha.append(n)
+        matriz.append(linha)
+    return matriz
+
+def preencher_matriz_aleatoria_diferente(lin: int, col: int) -> list:
+    '''Preenche a matriz com números aleatorios difrentes'''
+    matriz = []
+    sorteados = []
+    for i in range(lin):
+        linha = []
+        for j in range(col):
+            n = randint(1, 25)
+            while n in sorteados:
+                n = randint(1, 25)
+            linha.append(n)
+            sorteados.append(n)
         matriz.append(linha)
     return matriz
 
