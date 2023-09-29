@@ -2,18 +2,20 @@
 que contenha o maior elemento de cada uma das linhas da matriz.
 '''
 
+
 from modulo_matriz import preencher_matriz_aleatoria, exibe_matriz
 
 matriz = preencher_matriz_aleatoria(7, 7)
 exibe_matriz(matriz)
 
-menor = matriz[0][0] 
-linha = 0
-coluna = 0
+maiores = []
+
 for i in range(len(matriz)):
+    maior = 0
     for j in range(len(matriz[0])):
-        if matriz[i][j] > menor:
-            menor = matriz[i][j]
-            linha = i
-            coluna = j
-print(f'O menor valor é {menor} e está na linha {linha} e coluna {coluna}')
+        if matriz[i][j] > maior:
+            maior = matriz[i][j]
+    maiores.append(maior)
+
+print(maiores)
+

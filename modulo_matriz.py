@@ -24,7 +24,7 @@ def preencher_matriz_aleatoria(lin: int, col: int) -> list:
     for i in range(lin):
         linha = []
         for j in range(col):
-            n = randint(1, 50)
+            n = randint(1, 10)
             linha.append(n)
         matriz.append(linha)
     return matriz
