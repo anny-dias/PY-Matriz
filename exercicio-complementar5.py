@@ -8,3 +8,50 @@ Exemplo: a matriz abaixo é um quadrado mágico.
 9 6 7 12
 4 15 14 1
 '''
+
+from modulo_matriz import preencher_matriz, exibe_matriz
+
+matriz = preencher_matriz(4, 4)
+exibe_matriz(matriz)
+
+lista_somas = []
+
+#soma das linhas
+for i in range(len(matriz)):
+    s = 0       #somadora
+    for j in range(len(matriz[0])):
+        s += matriz[i][j]
+    lista_somas.append(s)
+
+#soma das colunas
+for i in range(len(matriz)):
+    s = 0
+    for j in range(len(matriz[0])):
+        s += matriz[j][i]
+    lista_somas.append(s)
+
+#soma das diagonais
+soma_diagonal = 0
+soma_secundaria = 0
+for i in range(len(matriz)):
+    for j in range(len(matriz[0])):
+        if i == j:                          #diagonal principal
+            soma_diagonal += matriz[i][j]
+        if i + j == len(matriz) - 1:        #diagonal secundaria
+            soma_secundaria += matriz[i][j]
+    lista_somas.append(soma_diagonal)
+    lista_somas.append(soma_secundaria)
+
+print(lista_somas)
+lista_somas = set(lista_somas)              #copia para o conjunto
+print(lista_somas)
+
+if len(lista_somas) == 0:
+    print('Quadrado mágico')
+else:
+    print('Não é um Quadrado mágico')
+
+
+
+
+
